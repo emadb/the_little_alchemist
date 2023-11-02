@@ -1,6 +1,4 @@
 defmodule LittleAlchemist.Chapter05 do
-  import LittleAlchemist.Chapter01
-
   def rember_star(_, []), do: []
   def rember_star(a, [a | t]), do: rember_star(a, t)
   def rember_star(a, [h | t]) when is_atom(h), do: [h | rember_star(a, t)]
