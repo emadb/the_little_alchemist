@@ -7,7 +7,7 @@ defmodule LittleAlchemist.Chapter03Test do
       rember(:mint, [:lamb, :chops, :and, :mint, :jelly])
 
     [:lamb, :chops, :and, :flavored, :mint, :jelly]
-      rember(:mint, [:lamb, :chops, :and, :mint, :flavored, :mint, :jelly])
+    rember(:mint, [:lamb, :chops, :and, :mint, :flavored, :mint, :jelly])
 
     [:bacon, :lettuce, :and, :tomato] =
       rember(:toast, [:bacon, :lettuce, :and, :tomato])
@@ -18,10 +18,12 @@ defmodule LittleAlchemist.Chapter03Test do
 
   test "firsts" do
     [:apple, :plum, :grape, :bean] =
-      firsts([[:apple, :peach, :pumpkin],
-                       [:plum, :pear, :cherry],
-                       [:grape, :raisin, :pea],
-                       [:bean, :carrot, :eggplant]])
+      firsts([
+        [:apple, :peach, :pumpkin],
+        [:plum, :pear, :cherry],
+        [:grape, :raisin, :pea],
+        [:bean, :carrot, :eggplant]
+      ])
 
     [:a, :c, :e] =
       firsts([[:a, :b], [:c, :d], [:e, :f]])
@@ -52,13 +54,12 @@ defmodule LittleAlchemist.Chapter03Test do
       subst(:topping, :fudge, [:ice, :cream, :with, :fudge, :for, :desert])
 
     [:this, :foo, :is, :for, :you]
-      subst(:foo, :bar, [:this, :bar, :is, :for, :you])
+    subst(:foo, :bar, [:this, :bar, :is, :for, :you])
   end
 
   test "subst2" do
     [:vanilla, :ice, :cream, :with, :chocolate, :topping] =
-      subst2(:vanilla, :chocolate, :banana,
-                      [:banana, :ice, :cream, :with, :chocolate, :topping])
+      subst2(:vanilla, :chocolate, :banana, [:banana, :ice, :cream, :with, :chocolate, :topping])
   end
 
   test "multirember" do
@@ -78,5 +79,4 @@ defmodule LittleAlchemist.Chapter03Test do
     [:my, :other, :foo, :is, :a, :foo] =
       multisubst(:foo, :bar, [:my, :other, :bar, :is, :a, :bar])
   end
-
 end

@@ -1,0 +1,24 @@
+name: Elixir CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: OTP ${{matrix.otp}} / Elixir ${{matrix.elixir}}
+    container:
+      image: elixir:1.15
+      env:
+        MIX_ENV: test
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Dependencies
+      run: |
+        mix local.rebar --force
+        mix local.hex --force
+        mix deps.get
+    - name: Check Formatting
+      run: mix format --check-formatted
+    - name: Run Tests
+      run: mix test
+    

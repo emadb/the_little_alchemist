@@ -23,7 +23,6 @@ defmodule LittleAlchemist.Chapter03 do
   def firsts([]), do: []
   def firsts([[h | _] | t]), do: [h | firsts(t)]
 
-
   # def insertR(new, old, lat) do
   #   cond do
   #     null?(lat) -> []

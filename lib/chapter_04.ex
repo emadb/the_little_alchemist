@@ -1,5 +1,4 @@
 defmodule LittleAlchemist.Chapter04 do
-
   def zero?(n), do: n == 0
 
   def add1(n), do: n + 1
@@ -15,25 +14,22 @@ defmodule LittleAlchemist.Chapter04 do
   def add(n, 0), do: n
   def add(n, m), do: 1 + add(n, m - 1)
 
-
   def sub(n, 0), do: n
   def sub(n, m), do: sub(n, m - 1) - 1
-
 
   def addtup([]), do: 0
   def addtup([h | t]), do: add(h, addtup(t))
 
   def addtup(t1, []), do: t1
   def addtup([], t2), do: t2
-  def addtup([h1|t1], [h2|t2]), do: [h1 + h2 | addtup(t1, t2)]
+  def addtup([h1 | t1], [h2 | t2]), do: [h1 + h2 | addtup(t1, t2)]
 
   # def addtup([], l), do: l
   # def addtup(l, []), do: l
   # def addtup(a, b), do: cons(add(car(a), car(b)), addtup(cdr(a), cdr(b)))
 
   def mul(n, 1), do: n
-  def mul(n, m), do: n + mul(n, m-1)
-
+  def mul(n, m), do: n + mul(n, m - 1)
 
   def greater_than(0, _), do: false
   def greater_than(_, 0), do: true
@@ -42,7 +38,6 @@ defmodule LittleAlchemist.Chapter04 do
   def less_than(_, 0), do: false
   def less_than(0, _), do: true
   def less_than(x, y), do: less_than(sub1(x), sub1(y))
-
 
   # def equals(n, m) do
   #   cond do
@@ -55,7 +50,7 @@ defmodule LittleAlchemist.Chapter04 do
   def equals(0, 0), do: true
   def equals(_, 0), do: false
   def equals(0, _), do: false
-  def equals(n, m), do: equals(n-1, m-1)
+  def equals(n, m), do: equals(n - 1, m - 1)
 
   def power(_, 0), do: 1
   def power(n, m), do: mul(n, power(n, sub1(m)))
@@ -71,7 +66,7 @@ defmodule LittleAlchemist.Chapter04 do
   # end
 
   def divide(n, m) when n < m, do: 0
-  def divide(n, m), do: 1 + divide(n-m, m)
+  def divide(n, m), do: 1 + divide(n - m, m)
 
   def size([]), do: 0
   def size([_ | t]), do: 1 + size(t)
@@ -87,8 +82,7 @@ defmodule LittleAlchemist.Chapter04 do
   def pick(n, [_ | t]), do: pick(n - 1, t)
 
   def rempick(1, [_ | t]), do: t
-  def rempick(n, [h | t]), do: [h | rempick(n-1, t)]
-
+  def rempick(n, [h | t]), do: [h | rempick(n - 1, t)]
 
   def nonums([]), do: []
   def nonums([h | t]) when is_number(h), do: nonums(t)
@@ -107,5 +101,4 @@ defmodule LittleAlchemist.Chapter04 do
 
   def one?(1), do: true
   def one?(_), do: false
-
 end

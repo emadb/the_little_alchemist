@@ -95,5 +95,4 @@ defmodule LittleAlchemist.Chapter04Test do
     assert one?(1)
     refute one?(9)
   end
-
 end

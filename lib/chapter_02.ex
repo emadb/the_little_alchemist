@@ -1,5 +1,4 @@
 defmodule LittleAlchemist.Chapter02 do
-
   # def lat?(lat) do
   #   cond do
   #     null?(lat) -> true
@@ -9,8 +8,8 @@ defmodule LittleAlchemist.Chapter02 do
   # end
 
   def lat?([]), do: true
-  def lat?([[_|_]|_]), do: false
-  def lat?([_|t]), do: lat?(t)
+  def lat?([[_ | _] | _]), do: false
+  def lat?([_ | t]), do: lat?(t)
 
   # def member?(a, lat) do
   #   cond do

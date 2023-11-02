@@ -4,7 +4,7 @@ defmodule LittleAlchemist.Chapter01Test do
 
   test "car" do
     assert car([:a, :b, :c]) == :a
-    assert car([[:a, :b, :c], :x, :y])  == [:a, :b, :c]
+    assert car([[:a, :b, :c], :x, :y]) == [:a, :b, :c]
   end
 
   test "cdr" do
@@ -19,7 +19,15 @@ defmodule LittleAlchemist.Chapter01Test do
 
   test "cons" do
     assert cons(:peanut, [:butter, :and, :jelly]) == [:peanut, :butter, :and, :jelly]
-    assert cons([:banana, :and], [:peanut, :butter, :and, :jelly]) == [[:banana, :and], :peanut, :butter, :and, :jelly]
+
+    assert cons([:banana, :and], [:peanut, :butter, :and, :jelly]) == [
+             [:banana, :and],
+             :peanut,
+             :butter,
+             :and,
+             :jelly
+           ]
+
     assert cons([:a, [:b, [:c]]], []) == [[:a, [:b, [:c]]]]
   end
 
@@ -42,5 +50,4 @@ defmodule LittleAlchemist.Chapter01Test do
     assert eq?(:a, :a) == true
     assert eq?(:a, :b) == false
   end
-
 end
